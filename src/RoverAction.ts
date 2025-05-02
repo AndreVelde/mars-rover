@@ -1,5 +1,6 @@
 import { RoverCommand } from './RoverCommand';
 import { RoverDirection } from './RoverDirection';
+import { RoverState } from './RoverState';
 
 export class RoverAction {
     private readonly directionActions = {
@@ -17,7 +18,18 @@ export class RoverAction {
         },
     };
 
+    private readonly moveActions = {
+        [RoverDirection.EAST]  : (roverState: RoverState) => roverState.xx++,
+        [RoverDirection.SOUTH] : (roverState: RoverState) => roverState.yy--,
+        [RoverDirection.WEST]  : (roverState: RoverState) => roverState.xx--,
+        [RoverDirection.NORTH] : (roverState: RoverState) => roverState.yy++,
+    };
+
     retrieveDirectionAction(command: RoverCommand.LEFT | RoverCommand.RIGHT, currentDirection: RoverDirection): RoverDirection {
         return this.directionActions[command][currentDirection];
+    }
+
+    retrieveMoveAction(currentDirection: RoverDirection): (roverState: RoverState) => void {
+        return this.moveActions[currentDirection];
     }
 }

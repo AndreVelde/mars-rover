@@ -13,4 +13,4 @@
   - Adjust go to pass in the RoverCommand enum instead of a string [x]
 
 - Adjust changeDirection to remove the if else statements [x]
-- Adjust changeState to remove if else for command Move [ ]
+- Adjust changeState to remove if else for command Move [x]

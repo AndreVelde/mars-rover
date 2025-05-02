@@ -6,7 +6,7 @@ export class RoverState {
     private readonly roverAction = new RoverAction();
     xx: number = 0;
     yy: number = 0;
-    dd: RoverDirection = RoverDirection.NORTH; // 'char' in C# is effectively a one-character string in TypeScript
+    dd: RoverDirection = RoverDirection.NORTH;
 
     constructor(xx: number, yy: number, dd: RoverDirection) {
         this.xx = xx;
@@ -20,18 +20,7 @@ export class RoverState {
         }
 
         if (command === RoverCommand.MOVE) {
-            if (this.dd === RoverDirection.EAST) {
-                this.xx++;
-            }
-            if (this.dd === RoverDirection.SOUTH) {
-                this.yy--;
-            }
-            if (this.dd === RoverDirection.WEST) {
-                this.xx--;
-            }
-            if (this.dd === RoverDirection.NORTH) {
-                this.yy++;
-            }
+            this.roverAction.retrieveMoveAction(this.dd)(this);
         }
     }
 
