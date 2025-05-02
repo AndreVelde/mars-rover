@@ -15,27 +15,9 @@ export class Rover {
     public go(cms: string): void {
         for (let i = 0; i < cms.length; i++) {
             const c = cms[i];
-            if (c === RoverCommand.LEFT) {
-                if (this.rs.dd === RoverDirection.EAST) {
-                    this.rs.dd = RoverDirection.NORTH;
-                } else if (this.rs.dd === RoverDirection.NORTH) {
-                    this.rs.dd = RoverDirection.WEST;
-                } else if (this.rs.dd === RoverDirection.WEST) {
-                    this.rs.dd = RoverDirection.SOUTH;
-                } else if (this.rs.dd === RoverDirection.SOUTH) {
-                    this.rs.dd = RoverDirection.EAST;
-                }
-            } else if (c === RoverCommand.RIGHT) {
-                if (this.rs.dd === RoverDirection.EAST) {
-                    this.rs.dd = RoverDirection.SOUTH;
-                } else if (this.rs.dd === RoverDirection.SOUTH) {
-                    this.rs.dd = RoverDirection.WEST;
-                } else if (this.rs.dd === RoverDirection.WEST) {
-                    this.rs.dd = RoverDirection.NORTH;
-                } else if (this.rs.dd === RoverDirection.NORTH) {
-                    this.rs.dd = RoverDirection.EAST;
-                }
-            } else if (c === RoverCommand.MOVE) {
+            this.rs.changeDirection(c);
+
+            if (c === RoverCommand.MOVE) {
                 if (this.rs.dd === RoverDirection.EAST) {
                     this.rs.xx++;
                 }
