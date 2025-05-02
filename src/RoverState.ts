@@ -20,7 +20,10 @@ export class RoverState {
         }
 
         if (command === RoverCommand.MOVE) {
-            this.roverAction.retrieveMoveAction(this.dd)(this);
+            this.roverAction.retrieveMoveAction(this.dd)((mx, my) => {
+                this.xx += mx;
+                this.yy += my;
+            });
         }
     }
 

@@ -16,3 +16,4 @@
 - Adjust changeState to remove if else for command Move [x]
 - Check in rover if it is exactly 3 after splitting up the values in the constructor [x]
 - Check in rover if it throws an error when a invalid direction is given [x]
+- Remove circular dependency between RoverAction and RoverState [x]
