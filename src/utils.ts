@@ -1,4 +1,5 @@
 export function isValidEnumAndReturn<T extends object>(enumType: T, value: unknown): T[keyof T] {
+    // eslint-disable-next-line prettier/prettier
     const result = Object.values(enumType)
         .find((x) => x === value);
 

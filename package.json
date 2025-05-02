@@ -19,7 +19,6 @@
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/js": "^9.25.1",
     "@vitest/coverage-istanbul": "3.1.2",
-    "@yikes2000/prettier-plugin-merge-extras": "^0.7.3-extras.2",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
