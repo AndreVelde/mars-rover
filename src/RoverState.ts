@@ -1,7 +1,9 @@
+import { RoverAction } from './RoverAction';
 import { RoverCommand } from './RoverCommand';
 import { RoverDirection } from './RoverDirection';
 
 export class RoverState {
+    private readonly roverAction = new RoverAction();
     xx: number = 0;
     yy: number = 0;
     dd: RoverDirection = RoverDirection.NORTH; // 'char' in C# is effectively a one-character string in TypeScript
@@ -12,33 +14,11 @@ export class RoverState {
         this.dd = dd;
     }
 
-    public changeDirection(command: RoverCommand) {
-        if (command === RoverCommand.LEFT) {
-            if (this.dd === RoverDirection.EAST) {
-                this.dd = RoverDirection.NORTH;
-            } else if (this.dd === RoverDirection.NORTH) {
-                this.dd = RoverDirection.WEST;
-            } else if (this.dd === RoverDirection.WEST) {
-                this.dd = RoverDirection.SOUTH;
-            } else if (this.dd === RoverDirection.SOUTH) {
-                this.dd = RoverDirection.EAST;
-            }
+    public changeState(command: RoverCommand) {
+        if (command === RoverCommand.RIGHT || command === RoverCommand.LEFT) {
+            this.dd = this.roverAction.retrieveDirectionAction(command, this.dd);
         }
 
-        if (command === RoverCommand.RIGHT) {
-            if (this.dd === RoverDirection.EAST) {
-                this.dd = RoverDirection.SOUTH;
-            } else if (this.dd === RoverDirection.SOUTH) {
-                this.dd = RoverDirection.WEST;
-            } else if (this.dd === RoverDirection.WEST) {
-                this.dd = RoverDirection.NORTH;
-            } else if (this.dd === RoverDirection.NORTH) {
-                this.dd = RoverDirection.EAST;
-            }
-        }
-    }
-
-    public moveForward(command: RoverCommand) {
         if (command === RoverCommand.MOVE) {
             if (this.dd === RoverDirection.EAST) {
                 this.xx++;

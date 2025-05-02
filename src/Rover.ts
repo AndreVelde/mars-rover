@@ -18,9 +18,7 @@ export class Rover {
         const commands = cms.split('').map((command) => isValidEnumAndReturn(RoverCommand, command));
 
         for (const command of commands) {
-            this.rs.changeDirection(command);
-
-            this.rs.moveForward(command);
+            this.rs.changeState(command);
         }
     }
 

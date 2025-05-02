@@ -12,4 +12,4 @@
 - Adjust RoverState changeDirection and moveForward methods to accept RoverCommand enum [x]
   - Adjust go to pass in the RoverCommand enum instead of a string [x]
 
-- Adjust changeDirection to remove the if else statements [ ]
+- Adjust changeDirection to remove the if else statements [x]
