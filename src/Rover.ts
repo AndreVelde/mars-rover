@@ -6,7 +6,7 @@ import { isValidEnumAndReturn } from './utils';
 export class Rover {
     private readonly rs: RoverState;
 
-    constructor(p: string = '') {
+    constructor(p: string) {
         const s = p.split(' ');
         if (s.length !== 3) {
             throw new Error('Invalid starting position');
