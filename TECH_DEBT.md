@@ -1,1 +1,1 @@
-- Adjust string magic values to constants/ enums [ ]
+- Adjust string magic values to constants/ enums [x]

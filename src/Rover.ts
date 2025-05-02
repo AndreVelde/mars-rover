@@ -1,3 +1,5 @@
+import { RoverCommand } from './RoverCommand';
+import { RoverDirection } from './RoverDirection';
 import { RoverState } from './RoverState';
 
 export class Rover {
@@ -13,37 +15,37 @@ export class Rover {
     public go(cms: string): void {
         for (let i = 0; i < cms.length; i++) {
             const c = cms[i];
-            if (c === 'L') {
-                if (this.rs.dd === 'E') {
-                    this.rs.dd = 'N';
-                } else if (this.rs.dd === 'N') {
-                    this.rs.dd = 'W';
-                } else if (this.rs.dd === 'W') {
-                    this.rs.dd = 'S';
-                } else if (this.rs.dd === 'S') {
-                    this.rs.dd = 'E';
+            if (c === RoverCommand.LEFT) {
+                if (this.rs.dd === RoverDirection.EAST) {
+                    this.rs.dd = RoverDirection.NORTH;
+                } else if (this.rs.dd === RoverDirection.NORTH) {
+                    this.rs.dd = RoverDirection.WEST;
+                } else if (this.rs.dd === RoverDirection.WEST) {
+                    this.rs.dd = RoverDirection.SOUTH;
+                } else if (this.rs.dd === RoverDirection.SOUTH) {
+                    this.rs.dd = RoverDirection.EAST;
                 }
-            } else if (c === 'R') {
-                if (this.rs.dd === 'E') {
-                    this.rs.dd = 'S';
-                } else if (this.rs.dd === 'S') {
-                    this.rs.dd = 'W';
-                } else if (this.rs.dd === 'W') {
-                    this.rs.dd = 'N';
-                } else if (this.rs.dd === 'N') {
-                    this.rs.dd = 'E';
+            } else if (c === RoverCommand.RIGHT) {
+                if (this.rs.dd === RoverDirection.EAST) {
+                    this.rs.dd = RoverDirection.SOUTH;
+                } else if (this.rs.dd === RoverDirection.SOUTH) {
+                    this.rs.dd = RoverDirection.WEST;
+                } else if (this.rs.dd === RoverDirection.WEST) {
+                    this.rs.dd = RoverDirection.NORTH;
+                } else if (this.rs.dd === RoverDirection.NORTH) {
+                    this.rs.dd = RoverDirection.EAST;
                 }
-            } else if (c === 'M') {
-                if (this.rs.dd === 'E') {
+            } else if (c === RoverCommand.MOVE) {
+                if (this.rs.dd === RoverDirection.EAST) {
                     this.rs.xx++;
                 }
-                if (this.rs.dd === 'S') {
+                if (this.rs.dd === RoverDirection.SOUTH) {
                     this.rs.yy--;
                 }
-                if (this.rs.dd === 'W') {
+                if (this.rs.dd === RoverDirection.WEST) {
                     this.rs.xx--;
                 }
-                if (this.rs.dd === 'N') {
+                if (this.rs.dd === RoverDirection.NORTH) {
                     this.rs.yy++;
                 }
             }
