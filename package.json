@@ -4,25 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest run --watch",
     "lint": "eslint --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@babel/preset-env": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/js": "^9.25.1",
-    "@types/jest": "^29.5.14",
-    "babel-jest": "^29.7.0",
+    "@vitest/coverage-istanbul": "3.1.2",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
-    "jest": "^29.7.0",
+    "vitest": "^3.1.2",
     "prettier": "^3.5.3",
-    "ts-jest": "^29.3.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.1"
   }

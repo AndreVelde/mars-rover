@@ -1,4 +1,5 @@
 import { Rover } from '../src/Rover';
+import { describe, test, expect } from 'vitest';
 
 describe('MarsRoverShould', () => {
     test.each([
