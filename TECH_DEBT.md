@@ -8,3 +8,6 @@
 - Change roverState dd from string to RoverDirection enum [x]
   - Adjust roverState constructor to accept RoverDirection enum [x]
     - Adjust Rover constructor to pass RoverDirection enum [x] 
+
+- Adjust RoverState changeDirection and moveForward methods to accept RoverCommand enum [ ]
+  - Adjust go to pass in the RoverCommand enum instead of a string [ ]
