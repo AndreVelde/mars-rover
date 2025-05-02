@@ -6,6 +6,12 @@ export class RoverState {
     yy: number = 0;
     dd: string = RoverDirection.NORTH; // 'char' in C# is effectively a one-character string in TypeScript
 
+    constructor(xx: number, yy: number, dd: string) {
+        this.xx = xx;
+        this.yy = yy;
+        this.dd = dd;
+    }
+
     public changeDirection(command: string) {
         if (command === RoverCommand.LEFT) {
             if (this.dd === RoverDirection.EAST) {

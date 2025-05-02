@@ -1,12 +1,12 @@
 import { RoverState } from './RoverState';
 
 export class Rover {
+    private readonly rs: RoverState;
+
     constructor(p: string = '') {
         const s = p.split(' ');
         if (s.length >= 3) {
-            this.rs.xx = parseInt(s[0], 10);
-            this.rs.yy = parseInt(s[1], 10);
-            this.rs.dd = s[2][0];
+            this.rs = new RoverState(parseInt(s[0], 10), parseInt(s[1], 10), s[2][0]);
         }
     }
 
@@ -22,6 +22,4 @@ export class Rover {
     public pos(): string {
         return this.rs.XYD;
     }
-
-    private rs: RoverState = new RoverState();
 }
