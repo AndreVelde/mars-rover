@@ -6,5 +6,6 @@
   "printWidth": 150,
   "semi": true,
   "tabWidth": 4,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "plugins": ["@yikes2000/prettier-plugin-merge-extras"]
 }
