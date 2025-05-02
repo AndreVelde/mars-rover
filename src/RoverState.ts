@@ -4,9 +4,9 @@ import { RoverDirection } from './RoverDirection';
 
 export class RoverState {
     private readonly roverAction = new RoverAction();
-    xx: number = 0;
-    yy: number = 0;
-    dd: RoverDirection = RoverDirection.NORTH;
+    private xx: number = 0;
+    private yy: number = 0;
+    private dd: RoverDirection = RoverDirection.NORTH;
 
     constructor(xx: number, yy: number, dd: RoverDirection) {
         this.xx = xx;

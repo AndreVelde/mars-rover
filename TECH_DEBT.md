@@ -19,4 +19,4 @@
 - Remove circular dependency between RoverAction and RoverState [x]
 - Remove unused default value inside rover constructor [x]
 - Check in rover if the instructions are correct [x]
-- Adjust roverState fields to private [ ]
+- Adjust roverState fields to private [x]
