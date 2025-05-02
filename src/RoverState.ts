@@ -31,4 +31,21 @@ export class RoverState {
             }
         }
     }
+
+    public moveForward(command: string) {
+        if (command === RoverCommand.MOVE) {
+            if (this.dd === RoverDirection.EAST) {
+                this.xx++;
+            }
+            if (this.dd === RoverDirection.SOUTH) {
+                this.yy--;
+            }
+            if (this.dd === RoverDirection.WEST) {
+                this.xx--;
+            }
+            if (this.dd === RoverDirection.NORTH) {
+                this.yy++;
+            }
+        }
+    }
 }

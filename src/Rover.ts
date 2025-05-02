@@ -1,5 +1,3 @@
-import { RoverCommand } from './RoverCommand';
-import { RoverDirection } from './RoverDirection';
 import { RoverState } from './RoverState';
 
 export class Rover {
@@ -17,20 +15,7 @@ export class Rover {
             const c = cms[i];
             this.rs.changeDirection(c);
 
-            if (c === RoverCommand.MOVE) {
-                if (this.rs.dd === RoverDirection.EAST) {
-                    this.rs.xx++;
-                }
-                if (this.rs.dd === RoverDirection.SOUTH) {
-                    this.rs.yy--;
-                }
-                if (this.rs.dd === RoverDirection.WEST) {
-                    this.rs.xx--;
-                }
-                if (this.rs.dd === RoverDirection.NORTH) {
-                    this.rs.yy++;
-                }
-            }
+            this.rs.moveForward(c);
         }
     }
 
