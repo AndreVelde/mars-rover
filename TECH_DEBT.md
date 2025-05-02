@@ -1,4 +1,4 @@
 - Adjust string magic values to constants/ enums [x]
 - Adjust rover change direction from Rover to RoverState class [x]
 - Adjust rover move forward from Rover to RoverState class [ ]
-- Remove unused method G from rover class [ ]
+- Remove unused method G from rover class [x]
