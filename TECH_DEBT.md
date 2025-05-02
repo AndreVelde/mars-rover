@@ -2,4 +2,4 @@
 - Adjust rover change direction from Rover to RoverState class [x]
 - Adjust rover move forward from Rover to RoverState class [x]
 - Remove unused method G from rover class [x]
-- Move XYD method to roverState class from rover to reduce feature envy [ ]
+- Move XYD method to roverState class from rover to reduce feature envy [x]

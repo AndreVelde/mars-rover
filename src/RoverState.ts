@@ -48,4 +48,8 @@ export class RoverState {
             }
         }
     }
+
+    public get XYD(): string {
+        return `${this.xx} ${this.yy} ${this.dd}`;
+    }
 }

@@ -19,12 +19,8 @@ export class Rover {
         }
     }
 
-    public get XYD(): string {
-        return `${this.rs.xx} ${this.rs.yy} ${this.rs.dd}`;
-    }
-
     public pos(): string {
-        return this.XYD;
+        return this.rs.XYD;
     }
 
     private rs: RoverState = new RoverState();
