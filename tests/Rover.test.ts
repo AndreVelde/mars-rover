@@ -33,4 +33,10 @@ describe('MarsRoverShould', () => {
     test('should throw error when invalid starting position due to incorrect direction', () => {
         expect(() => new Rover('1 2 Q')).toThrowError('Invalid value: Q');
     });
+
+    test('should throw error when giving invalid instructions', () => {
+        const rover = new Rover('1 2 N');
+
+        expect(() => rover.go('LMLMPOLMM')).toThrowError('Invalid value: P');
+    });
 });
