@@ -1,4 +1,6 @@
+import { RoverDirection } from './RoverDirection';
 import { RoverState } from './RoverState';
+import { isValidEnumAndReturn } from './utils';
 
 export class Rover {
     private readonly rs: RoverState;
@@ -6,7 +8,8 @@ export class Rover {
     constructor(p: string = '') {
         const s = p.split(' ');
         if (s.length >= 3) {
-            this.rs = new RoverState(parseInt(s[0], 10), parseInt(s[1], 10), s[2][0]);
+            const direction = isValidEnumAndReturn(RoverDirection, s[2][0]);
+            this.rs = new RoverState(parseInt(s[0], 10), parseInt(s[1], 10), direction);
         }
     }
 

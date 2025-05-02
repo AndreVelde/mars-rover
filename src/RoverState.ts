@@ -4,9 +4,9 @@ import { RoverDirection } from './RoverDirection';
 export class RoverState {
     xx: number = 0;
     yy: number = 0;
-    dd: string = RoverDirection.NORTH; // 'char' in C# is effectively a one-character string in TypeScript
+    dd: RoverDirection = RoverDirection.NORTH; // 'char' in C# is effectively a one-character string in TypeScript
 
-    constructor(xx: number, yy: number, dd: string) {
+    constructor(xx: number, yy: number, dd: RoverDirection) {
         this.xx = xx;
         this.yy = yy;
         this.dd = dd;
