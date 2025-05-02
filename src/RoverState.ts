@@ -12,7 +12,7 @@ export class RoverState {
         this.dd = dd;
     }
 
-    public changeDirection(command: string) {
+    public changeDirection(command: RoverCommand) {
         if (command === RoverCommand.LEFT) {
             if (this.dd === RoverDirection.EAST) {
                 this.dd = RoverDirection.NORTH;
@@ -38,7 +38,7 @@ export class RoverState {
         }
     }
 
-    public moveForward(command: string) {
+    public moveForward(command: RoverCommand) {
         if (command === RoverCommand.MOVE) {
             if (this.dd === RoverDirection.EAST) {
                 this.xx++;

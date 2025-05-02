@@ -1,3 +1,4 @@
+import { RoverCommand } from './RoverCommand';
 import { RoverDirection } from './RoverDirection';
 import { RoverState } from './RoverState';
 import { isValidEnumAndReturn } from './utils';
@@ -14,11 +15,12 @@ export class Rover {
     }
 
     public go(cms: string): void {
-        for (let i = 0; i < cms.length; i++) {
-            const c = cms[i];
-            this.rs.changeDirection(c);
+        const commands = cms.split('').map((command) => isValidEnumAndReturn(RoverCommand, command));
 
-            this.rs.moveForward(c);
+        for (const command of commands) {
+            this.rs.changeDirection(command);
+
+            this.rs.moveForward(command);
         }
     }
 
