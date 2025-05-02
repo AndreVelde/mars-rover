@@ -4,3 +4,7 @@
 - Remove unused method G from rover class [x]
 - Move XYD method to roverState class from rover to reduce feature envy [x]
 - Add aa constructor to RoverState and initialize it in the Rover constructor [x]
+
+- Change roverState dd from string to RoverDirection enum [ ]
+  - Adjust roverState constructor to accept RoverDirection enum [ ]
+    - Adjust Rover constructor to pass RoverDirection enum [ ] 
