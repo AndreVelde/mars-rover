@@ -1,0 +1,1 @@
+- Adjust string magic values to constants/ enums [ ]
