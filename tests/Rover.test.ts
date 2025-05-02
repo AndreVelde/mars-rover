@@ -23,4 +23,8 @@ describe('MarsRoverShould', () => {
         rover.go(instructions);
         expect(rover.pos()).toBe(expectedOutput);
     });
+
+    test('should throw error when invalid starting position due to invalid length', () => {
+        expect(() => new Rover('1 2 E E')).toThrowError('Invalid starting position');
+    });
 });

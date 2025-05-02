@@ -8,10 +8,12 @@ export class Rover {
 
     constructor(p: string = '') {
         const s = p.split(' ');
-        if (s.length >= 3) {
-            const direction = isValidEnumAndReturn(RoverDirection, s[2][0]);
-            this.rs = new RoverState(parseInt(s[0], 10), parseInt(s[1], 10), direction);
+        if (s.length !== 3) {
+            throw new Error('Invalid starting position');
         }
+
+        const direction = isValidEnumAndReturn(RoverDirection, s[2][0]);
+        this.rs = new RoverState(parseInt(s[0], 10), parseInt(s[1], 10), direction);
     }
 
     public go(cms: string): void {
